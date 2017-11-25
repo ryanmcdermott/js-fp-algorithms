@@ -1,8 +1,6 @@
 import _ from 'lodash';
 
-let list = ['a', 'a', 'a', 'a', 'b', 'b', 'c', 'c', 'c', 'd'];
-
-let runLength = (l, result) => {
+const runLength = (l, result = []) => {
 	if (!l.length) return result;
 	return runLength(
 		_.dropWhile(l, item => item == l[0]),
@@ -12,5 +10,4 @@ let runLength = (l, result) => {
 	);
 };
 
-let result = runLength(list, []);
-console.log(result);
+export default runLength;
