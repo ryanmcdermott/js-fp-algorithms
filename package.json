@@ -1,0 +1,16 @@
+{
+	"name": "js-fp-algorithms",
+	"version": "0.0.1",
+	"description": "Algorithms written in a Functional Programming style for JavaScript",
+	"main": "index.js",
+	"scripts": {
+		"test": "./node_modules/.bin/mocha --reporter spec"
+	},
+	"author": "Ryan McDermott",
+	"devDependencies": {
+		"mocha": "2.4.5",
+		"chai": "3.5.0",
+		"lodash": "4.17.4"
+	},
+	"license": "MIT"
+}
