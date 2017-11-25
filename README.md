@@ -15,7 +15,8 @@ No variables are mutated because there are no variables, only constants.
 
 ### No side effects
 Functions will always produce the same output given the same input. No sneaky
-global variables, calling the network, or calling your
+global variables, calling the network, or running quicksort and then deleting
+all your songs on Spotify.
 
 ## Installation
 `npm install`
