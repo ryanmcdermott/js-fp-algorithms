@@ -32,4 +32,4 @@ const binarySearch = (needle, haystack) => {
 	);
 };
 
-binarySearch(7, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]); // 3
+export default binarySearch;
