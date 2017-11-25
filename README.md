@@ -1,4 +1,4 @@
-# js-fp-algorithms
+# js-fp-algorithms [![Build Status](https://api.travis-ci.org/ryanmcdermott/js-fp-algorithms.svg?branch=master)](https://travis-ci.org/ryanmcdermott/js-fp-algorithms)
 A collection of algorithms written in JavaScript in a functional programming
 style.
 
