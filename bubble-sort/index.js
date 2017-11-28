@@ -1,11 +1,9 @@
-import _ from 'lodash';
-
 // More efficient if using Immutable arrays
-function swap(list, i, j) {
+const swap = (list, i, j) => {
   list = list.slice();
   [list[i], list[j]] = [list[j], list[i]];
   return list;
-}
+};
 
 const sortListPortion = (list, left, right) => {
   if (left === right) return list;
