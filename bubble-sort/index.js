@@ -7,16 +7,20 @@ function swap(list, i, j) {
   return list;
 }
 
+const sortListPortion = (list, left, right) => {
+  if (left === right) return list;
+
+  if (list[left] > list[left + 1]) {
+    return sortListPortion(swap(list, left, left + 1), left + 1, right);
+  }
+
+  return sortListPortion(list, left + 1, right);
+};
+
 const bubbleSortHelper = (list, pointer) => {
   if (pointer === 0) return list;
 
-  _.range(0, pointer).map(i => {
-    if (list[i] > list[i + 1]) {
-      list = swap(list, i, i + 1);
-    }
-  });
-
-  return bubbleSortHelper(list, pointer - 1);
+  return bubbleSortHelper(sortListPortion(list, 0, pointer), pointer - 1);
 };
 
 const bubbleSort = list =>
