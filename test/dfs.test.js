@@ -16,7 +16,6 @@ describe('dfs', function() {
     };
 
     const result = dfs(graph, start, destination);
-    console.warn(result);
-    //expect(result).to.equal(['A', 'B', 'E', 'F'], ['A', 'C', 'F']);
+    expect(result).to.deep.equal([['A', 'B', 'E', 'F'], ['A', 'C', 'F']]);
   });
 });
