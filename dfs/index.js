@@ -1,18 +1,18 @@
 import _ from 'lodash';
 
-const dfsHelper = (graph, start, destination, path, paths) => {
-  // This is mutative, should use yield and yield * ideally
-  if (start === destination) return paths.push(path);
+function* dfsHelper(graph, start, destination, path) {
+  if (start === destination) yield path;
 
-  _.difference(graph[start], path).map(vertex => {
-    dfsHelper(graph, vertex, destination, [...path, vertex], paths);
-  });
+  const neighbors = _.difference(graph[start], path);
 
-  return paths;
-};
+  for (let i = 0; i < neighbors.length; i++) {
+    yield* dfsHelper(graph, neighbors[i], destination, [...path, neighbors[i]]);
+  }
+}
 
 const dfs = (graph, start, destination) => {
-  return dfsHelper(graph, start, destination, [start], []);
+  const paths = dfsHelper(graph, start, destination, [start]);
+  return [...paths];
 };
 
 export default dfs;
