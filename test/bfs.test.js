@@ -8,14 +8,14 @@ describe('dfs', function() {
 
     const graph = {
       A: ['B', 'C'],
-      B: ['A', 'D', 'E'],
-      C: ['A', 'F'],
-      D: ['B'],
-      E: ['B', 'F'],
-      F: ['C', 'E'],
+      B: ['D', 'E'],
+      C: ['F'],
+      D: [],
+      E: ['F'],
+      F: [],
     };
 
     const result = bfs(graph, start, destination);
-    expect(result).to.deep.equal([['A', 'B', 'E', 'F'], ['A', 'C', 'F']]);
+    expect(result).to.deep.equal(['A', 'B', 'C', 'D', 'E', 'F']);
   });
 });
